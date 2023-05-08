@@ -1,0 +1,52 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  .left {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    .left_item {
+      button {
+        border: 1px solid grey;
+        height: 36px;
+        width: 36px;
+        background: skyblue;
+      }
+      .logo_img {
+        img {
+          width: auto;
+          height: 36px;
+        }
+      }
+    }
+  }
+  .right {
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+    align-items: center;
+    color: #fff;
+    .right_item {
+      .icon {
+        cursor: pointer;
+      }
+      span {
+        margin-left: 5px;
+      }
+      p {
+        margin: 0px;
+      }
+      img {
+        width: auto;
+        height: 36px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

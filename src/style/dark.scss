@@ -1,0 +1,54 @@
+.App.dark {
+  .home {
+    .homeContainer {
+      background-color: #222;
+      color: #fff;
+      .sidebar {
+        .left-sidebar {
+          .left-sidebar__item {
+            background-color: #222;
+          }
+          .center {
+            a {
+              color: #fff;
+            }
+            a:hover {
+              background-color: #0dcaf0;
+            }
+            ul {
+              background-color: #222;
+              .css-6dgv69 > .ps-menu-button {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+      .content {
+        .table {
+          .datagrid {
+            color: #fff;
+            p,
+            button {
+              color: #fff;
+            }
+          }
+        }
+        .userDashboard {
+          .userDashboard_content {
+            .datagrid {
+              color: #fff;
+              p,
+              button {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .auth {
+    background-color: #222;
+  }
+}

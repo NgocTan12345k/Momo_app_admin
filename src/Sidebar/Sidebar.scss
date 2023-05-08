@@ -1,0 +1,50 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+.left-sidebar {
+  text-align: center;
+  transition: all 300ms ease;
+  border-right: 1px solid rgb(230, 227, 227);
+  background-color: #fff;
+  .left-sidebar__item {
+    background-color: #fff;
+  }
+  .center {
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    ul {
+      padding-left: initial;
+      .title {
+        text-align: left;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      li {
+        text-align: left;
+        list-style-type: none;
+        padding-left: 16px;
+        margin: 10px 0;
+        .icon {
+          font-size: 18px;
+          text-align: left;
+          margin-right: 8px;
+        }
+        span {
+        }
+      }
+    }
+  }
+  .bottom {
+    height: 50px;
+  }
+}
+
+// @include media-breakpoint-up(md) {
+//   .left-sidebar {
+//     display: block;
+//   }
+// }
