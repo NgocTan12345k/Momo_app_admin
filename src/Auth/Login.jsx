@@ -9,7 +9,6 @@ import {
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBIcon,
 } from "mdb-react-ui-kit";
 import Form from "react-bootstrap/Form";
 import "./Auth.scss";
@@ -157,32 +156,6 @@ const Login = () => {
                   <p>Forgot password?</p>
                 </Link>
                 <hr className="my-4" />
-                <MDBBtn
-                  className="mb-2 w-100"
-                  size="lg"
-                  style={{
-                    backgroundColor: "#dd4b39",
-                    border: "none",
-                    width: "80px",
-                    height: "56px",
-                  }}
-                >
-                  <MDBIcon fab icon="google" className="mx-2" />
-                  Sign in with google
-                </MDBBtn>
-                <MDBBtn
-                  className="mb-2 w-100"
-                  size="lg"
-                  style={{
-                    backgroundColor: "#3b5998",
-                    border: "none",
-                    width: "80px",
-                    height: "56px",
-                  }}
-                >
-                  <MDBIcon fab icon="facebook-f" className="mx-2" />
-                  Sign in with facebook
-                </MDBBtn>
                 <p style={{ textAlign: "center" }}>
                   Not a member? &nbsp;
                   <Link
