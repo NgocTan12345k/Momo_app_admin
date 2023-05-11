@@ -1,7 +1,6 @@
 import Header from "../Header/Header";
 import SidebarComponent from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
-import { useParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
@@ -10,26 +9,14 @@ import dateFormat from "dateformat";
 import convertMoney from "../convertMoney";
 
 const History = () => {
-  // const [historyDonation, setHistoryDonation] = useState([]);
   const [donations, setDonations] = useState([]);
   const [search, setSearch] = useState("");
-  // const { id } = useParams();
   const handleSearch = (e) => {
     const text = e.target.value;
     setSearch(text);
   };
 
   useEffect(() => {
-    // const getHistoryDonation = async () => {
-    //   await DonationAPI.getHistoryDonation(id)
-    //     .then((res) => {
-    //       setHistoryDonation(res.data);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //     });
-    // };
-    // getHistoryDonation();
     try {
       const getAllDonation = async () => {
         const res = await DonationAPI.getAllDonation();
@@ -43,11 +30,6 @@ const History = () => {
 
   const columns = [
     { field: "col1", headerName: "STT", width: 50 },
-    // {
-    //   field: "col2",
-    //   headerName: "UserID",
-    //   width: 200,
-    // },
     {
       field: "col2",
       headerName: "User Name",
@@ -75,21 +57,23 @@ const History = () => {
       width: 150,
     },
   ];
-  // Search By payment
+  // Search By title and payment
 
   const rows = donations
     .filter((item) => {
       if (search === "") {
-        return item.payment;
+        return item.payment || item.post_id.title;
       } else {
-        return item.payment.toLowerCase().includes(search.toLowerCase());
+        return (
+          item.payment.toLowerCase().includes(search.toLowerCase()) ||
+          item.post_id.title.toLowerCase().includes(search.toLowerCase())
+        );
       }
     })
     .map((item, index) => {
       return {
         id: index + 1,
         col1: index + 1,
-        // col2: item.user_id._id,
         col2: item.user_id.fullName,
         col3: dateFormat(item.createdAt, "dd/mm/yyyy"),
         col4: item.post_id.title,
